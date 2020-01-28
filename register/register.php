@@ -1,5 +1,6 @@
 <?php
 require_once("../connection.php");
+var_dump($db);
 
 if(isset($_POST['register'])){
     // filter data yang diinputkan
@@ -13,7 +14,7 @@ if(isset($_POST['register'])){
     // menyiapkan query
     $sql = "INSERT INTO users (username, password) 
             VALUES (:username, :password)";
-    $stmt = $db->prepare($sql);
+    $stmt = $connect->prepare($sql);
 
     // bind parameter ke query
     $params = array(

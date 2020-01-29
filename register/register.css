@@ -20,7 +20,7 @@ button{
 }
 #daftar{
     width: 35%;
-    height: 55%;
+    height: auto;
     background-color: white;
     margin: auto;
     padding: 5px;

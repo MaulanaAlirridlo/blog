@@ -28,7 +28,7 @@ if(isset($_POST['login'])){
             session_start();
             $_SESSION["user"] = $user;
             // login sukses, alihkan ke halaman timeline
-            header("Location: ../home.php");
+            header("Location: ../home/home.php");
         }
     }
 }

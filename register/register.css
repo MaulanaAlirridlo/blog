@@ -65,8 +65,12 @@ input[type=password]{
 	background-color: rgba(255, 255, 255, 0);
     font-size: 20px;
 }
+.tmbl{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
 #login{
-    padding: 20px;
+
     text-align: center;
 }
 #login a{

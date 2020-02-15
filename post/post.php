@@ -3,8 +3,12 @@ require_once("../connection.php");
 session_start();
     if(!($_SESSION['user']))  {
         header('location: ../login/login.html');
-    };
+    }
+    else{
+        $user = $_SESSION['user'];
+    }
 if(isset($_POST['post'])){
+    $iduser =   $_POST['iduser'];
     $judul  =   $_POST['judul'];
     $isi    =   $_POST['isi'];
     $nama   =   $_POST['nama'];
@@ -19,8 +23,9 @@ if(isset($_POST['post'])){
         $nama='unknow';
     }
     else{
-        $sql="INSERT INTO post (nama, judul, isi) VALUES (:nama, :judul, :isi)";
+        $sql="INSERT INTO post (iduser, nama, judul, isi) VALUES (:iduser, :nama, :judul, :isi)";
         $siap=$db->prepare($sql);
+        $siap->bindValue(':iduser', $iduser);
         $siap->bindvalue(':nama', $nama);
         $siap->bindValue(':judul', $judul);
         $siap->bindValue(':isi', $isi);
@@ -50,6 +55,7 @@ if(isset($_POST['post'])){
     <img src="https://cdn.pixabay.com/photo/2018/03/15/19/35/cartoon-3229316_640.png" id="img">
     <form method="post" name="post">
         <div id="post">
+            <input type="hidden" value="<?php echo $user['iduser']?>" name="iduser">
             <input type="text" placeholder="Nama Pena" name="nama"><br><br>
             <input type="text" placeholder="Judul Post" name="judul"><br>
             <textarea placeholder="isilah dengan sesuatu yang tidak bermanfaat" name="isi"></textarea><br>

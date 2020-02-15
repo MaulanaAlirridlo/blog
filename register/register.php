@@ -49,7 +49,7 @@
 
 <body>
     <script src="../style/sweetalert2.all.min.js"></script>
-    <img src="https://cdn.pixabay.com/photo/2018/03/13/20/23/cartoon-3223656_960_720.png" id="img">
+    <img src="../head/logo.png" id="img">
     <div id="daftar">
         <h1>Register</h1>
         <form method="post">

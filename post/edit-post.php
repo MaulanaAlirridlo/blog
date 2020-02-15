@@ -9,7 +9,7 @@ try {
 } catch(PDOException $e) {
     echo $e->getMessage();
 }
-if(isset($_POST['post'])){
+if(isset($_POST['submit'])){
     $judul  =   $_POST['judul'];
     $isi    =   $_POST['isi'];
     $nama   =   $_POST['nama'];
@@ -31,11 +31,11 @@ if(isset($_POST['post'])){
             ':judul' => $judul,
             ':isi' => $isi,
             ':idpost' => $idpost
-));
+        ));
 
-//redirect to index page
-header("location:index.php?pesan=update");
-exit;
+        //redirect to index page
+        header("location:../tampil/template.php?idpost=$idpost&status=updated");
+        exit;
 
     }
 }

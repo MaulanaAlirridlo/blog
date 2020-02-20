@@ -32,6 +32,7 @@ while($item =  $stmt->fetch(PDO::FETCH_OBJ)) {
 <?php endforeach; ?>
 
 <!-- //cmn gawe while -->
+$stmt = $db->query("SELECT * FROM post");
 <?php while($siap = $stmt->fetch()): ?>
 <a href="index.php?postid=<?= $siap['idpost'] ?>" class="simpen-link">
     <div class="card">

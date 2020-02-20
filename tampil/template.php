@@ -79,7 +79,7 @@
                 <h2 class="nama"><?= $item->nama?></h2>
                 <p class="isi"><?= $item->isikomen?></p>
             </div>
-            <!-- <?php if($user['iduser']==$item->iduser):?>
+            <?php if($user['iduser']==$item->iduser):?>
                 <div class="dropdown1">
                     <button class="dropbtn1"><img src="../panah.png"></button>
                     <div class="dropdown-content1">
@@ -87,18 +87,18 @@
                         <a href="javascript:delpost('<?php echo $item->idpost;?>','<?php echo $item->judul;?>')">Delete</a>
                     </div>
                 </div>
-                <?php endif;?> -->
+                <?php endif;?>
         <?php endforeach; ?>
         <div class="inputkomen">
             <form method="post">
                 <input type="hidden" value="<?php echo $user['iduser']?>" name="iduser">
                 <input type="text" placeholder="nama" name="nama"><br>
-                <textarea placeholder="isi comment" name="isikomen"></textarea><br>
+                <textarea placeholder="isi komentar" name="isikomen"></textarea><br>
                 <input type="submit" value="kirim" name="kirim">
             </form>
         </div>
     </div>
-
+    <?php include('../foot/footer1.html') ?>
 </body>
 
 </html>

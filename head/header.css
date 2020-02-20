@@ -1,9 +1,15 @@
+body{
+  margin:0px;
+}
 .header{
     background-color: rgb(24, 24, 24);
     height: 45px;
     width: 100%;
     padding: 3px;
+    position: fixed; /*trik posisi fix*/
+	  z-index:1000; /*supaya header selalu muncul di atas seluruh elemen*/
     /* overflow: hidden; */
+    top: 0;
 }
 .header #img1{
     width: auto;

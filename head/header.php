@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="head/logo.png" id="img1">
+        <a href="index.php"><img src="head/logo.png" id="img1"></a>
         <div id="akun">
             <?php
             if($user)  {

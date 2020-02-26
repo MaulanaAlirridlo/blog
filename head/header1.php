@@ -1,5 +1,5 @@
 <?php
-
+    include('../connection.php');
     if(isset($_SESSION['user'])) {
         $user = $_SESSION['user'];
      } else {
@@ -12,14 +12,13 @@
 </head>
 <body>
     <div class="header">
-        <img src="../head/logo.png" id="img1">
+        <a href="../index.php"><img src="../head/logo.png" id="img1"></a>
         <div id="akun">
             <?php
             if($user)  {
                 echo "<div class='welcome'> $user[username] <br> $user[status] ";
                 echo '<div class="dropdown">';
-                echo '<button class="dropbtn1"><img src="../panah.png">';
-                echo '</button>';
+                echo '<button class="dropbtn1"><img src="../panah.png"></button>';
                 echo '<div class="dropdown-content">';
                 echo '<a href="../home/home.php">home</a>';
                 echo '<a href="../logout.php">log out</a>';

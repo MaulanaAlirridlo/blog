@@ -5,6 +5,7 @@ html,body{
 }
 body{
     background-image: url('wp.jpg');
+    background-color: white;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -18,9 +19,22 @@ body{
     padding: 10px;
     float: right;
     margin: 18px;
+    overflow: hidden;
+    margin-bottom: 50px;
 }
 .conten div{
     background-color: white;
+}
+.card{
+  height: auto;
+
+}
+.conten-pict{
+  width: 100px;
+  height: 100px;
+  float: left;
+  display: block;
+  margin: 10px;
 }
 
   .dropdown1 {
@@ -126,13 +140,14 @@ body{
   
   /* Caption text */
   .text {
-    color: #f2f2f2;
-    font-size: 15px;
+    color: black;
+    font-size: 25px;
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
     width: 100%;
     text-align: center;
+    -webkit-text-stroke: 1px white;
   }
   
   /* Number text (1/3 etc) */
@@ -181,4 +196,135 @@ body{
   /* On smaller screens, decrease text size */
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
+  }
+
+  .iklan{
+    background-color: rgba(37, 37, 37, 0.541);
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin:18px;
+    text-align: center;
+    color: white;
+  }
+  .iklan1{
+    background-color: rgba(37, 37, 37, 0.541);
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin:18px;
+    text-align: center;
+    color: white;
+    float: right;
+  }
+  .iklangangguk{
+    width: 850px;
+    height: auto;
+  }
+  .video{
+    width: 90%;
+    height: 400px;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    overflow: hidden;
+  }
+  .random{
+    width: 90%;
+    float: right;
+    height: 400px;
+    overflow: hidden;
+    background-color: white;
+    margin-bottom: 20px;
+  }
+  .random-pict{
+    height: 100%;
+    width: auto;
+    float: left;
+    margin-right: 20px;
+  }
+  .random-text{
+    font-size: 40px;
+  }
+  .allpost{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 20px;
+  }
+  .isiallpost{
+    overflow: hidden;
+    padding: 10px;
+  }
+  .allpost-pict{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 20px;
+  }
+  .pelengkap{
+    width: 90%;
+    height: 400px;
+    background-color: rgb(247, 247, 247);
+    color: black;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .pelengkap img{
+    float: right;
+  }
+  .allpost2{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+  }
+  .isiallpost2{
+    overflow: hidden;
+    padding: 0px;
+    width: 200px;
+    height: auto;
+    float: left;
+    margin: 20px;
+  }
+  .allpost-pict2{
+    width: 200px;
+    height: 100px;
+    float: left;
+    margin-bottom: 20px;
+  }
+  .rekomendasi{
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .random-pict1{
+    float: right;
+    width: 600px;
+    height: auto;
+    position: relative;
+    right: 70px;
+    bottom: 210px;
+  }
+  .rekomendasi h1{
+    z-index: 1000;
+    font-size: 100px;
+    position: relative;
+    bottom: 70px;
+  }
+  .pelengkap1{
+    width: 100%;
+    background-color: black;
+    height: 800px;
+    color: white;
+  }
+  .pelengkap1 h1{
+    font-size: 100px;
   }

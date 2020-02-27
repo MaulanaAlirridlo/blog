@@ -109,21 +109,23 @@
                 <p class="isi"><?= $item->isikomen?></p>
             </div>
             <?php if($user['iduser']==$item->iduser):?>
-                <div class="editkomen">
-                    <label class="pointer" for="komen-<?= $item->idkomen ?>"">Edit</label> |
-                    <a href="javascript:delkomen('<?php echo $item->idkomen;?>','<?php echo $idpost;?>')">Delete</a>
+                <div class="testkomen">
+                    <div class="editkomen">
+                        <label class="pointer" for="komen-<?= $item->idkomen ?>">Edit</label> |
+                        <a href="javascript:delkomen('<?php echo $item->idkomen;?>','<?php echo $idpost;?>')">Delete</a>
+                    </div>
+                    <input class="check none" type="checkbox" id="komen-<?= $item->idkomen ?>" name="komen-<?= $item->idkomen ?>">
+                    <br>
+                    <div class="edit none">
+                        <form method="post">
+                            <input type="hidden" value="<?= $item->idkomen ?>" name="idkomenedit">
+                            <input type="hidden" value="<?php echo $user['iduser']?>" name="iduseredit">
+                            <input type="text" placeholder="nama" name="namaedit" value="<?= $item->nama ?>"><br>
+                            <textarea placeholder="isi komentar" name="isikomenedit"><?= $item->isikomen ?></textarea><br>
+                            <input type="submit" value="simpan" name="edit">
+                        </form>
+                    </div><br>
                 </div>
-                <input class="check" type="checkbox" id="komen-<?= $item->idkomen ?>" name="komen<?= $item->idkomen ?>">
-                <br>
-                <div class="edit none">
-                    <form method="post">
-                        <input type="hidden" value="<?= $item->idkomen ?>" name="idkomenedit">
-                        <input type="hidden" value="<?php echo $user['iduser']?>" name="iduseredit">
-                        <input type="text" placeholder="nama" name="namaedit" value="<?= $item->nama ?>"><br>
-                        <textarea placeholder="isi komentar" name="isikomenedit"><?= $item->isikomen ?></textarea><br>
-                        <input type="submit" value="simpan" name="edit">
-                    </form>
-                </div><br>
             <?php endif;?>
         <?php endforeach; ?>
         <div class="inputkomen">

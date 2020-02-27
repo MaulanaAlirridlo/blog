@@ -15,6 +15,7 @@
         <a href="../index.php"><img src="../head/logo.png" id="img1"></a>
         <div id="akun">
             <?php
+            var_dump($user);
             if($user)  {
                 echo "<div class='welcome'> $user[username] <br> $user[status] ";
                 echo '<div class="dropdown">';

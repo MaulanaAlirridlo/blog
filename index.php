@@ -50,18 +50,19 @@ if(isset($_GET['delpost'])){
         <div class="mySlides fade">
             <a href="./tampil/template.php?idpost=<?= $siap['idpost'] ?>" class="link">
                 <img src='uploads/<?="$siap[nama_gambar].$siap[format_gambar]"?>' class="slide-pict">
-                <div class="text"><?=$siap['judul']?></div>
+                <div class="text"><h1><?=substr($siap['judul'],0,48);?></h1></div>
             </a>
         </div>
         <?php endwhile; ?>
 
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
 
     <div class="conten">
+        <h1>recent</h1>
         <?php foreach($data as $item): ?>
         <a href="./tampil/template.php?idpost=<?= $item->idpost ?>" class="simpen-link">
             <div class="card">
@@ -85,12 +86,10 @@ if(isset($_GET['delpost'])){
         </a>
         <?php endforeach; ?>
     </div>
-    <div class="iklan">
-        <h1>Space Iklan :V</h1>
-        <h1 class="gede">400x400</h1>
-    </div>
     <div class="video">
         <h1>VIDEO</h1>
+        <h3>Ina Wroldsen - Strongest (Lyric Video)</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/X_5Qz63QKAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="videoyt"></iframe>
     </div>
     <br>
     <?php
@@ -98,8 +97,10 @@ if(isset($_GET['delpost'])){
         while($siap = $stmt->fetch()): 
     ?>
         <div class="random">
+        <a href="./tampil/template.php?idpost=<?= $siap['idpost'] ?>" class="link">
             <img src='uploads/<?="$siap[nama_gambar].$siap[format_gambar]"?>' class="random-pict">
             <div class="random-text"><br><br><?=$siap['judul']?><br></div>
+        </a>
             <h3><?= $siap['nama'] ?></h3>
         </div>
     <?php endwhile;?>
@@ -110,8 +111,10 @@ if(isset($_GET['delpost'])){
             while($siap = $stmt->fetch(PDO::FETCH_ASSOC)): 
         ?>
             <div class="isiallpost">
+            <a href="./tampil/template.php?idpost=<?= $siap['idpost'] ?>" class="link">
                 <img src='uploads/<?="$siap[nama_gambar].$siap[format_gambar]"?>' class="allpost-pict">
                 <div class="allpost-text"><?=$siap['judul']?><br></div>
+            </a>
                 <h4><?= $siap['nama'] ?></h4>
             </div>
         <?php endwhile;?>
@@ -126,9 +129,11 @@ if(isset($_GET['delpost'])){
             while($siap = $stmt->fetch(PDO::FETCH_ASSOC)): 
         ?>
             <div class="isiallpost2">
+            <a href="./tampil/template.php?idpost=<?= $siap['idpost'] ?>" class="link">
                 <img src='uploads/<?="$siap[nama_gambar].$siap[format_gambar]"?>' class="allpost-pict2"> <br>
                 <h4 class="allpost-short-text2"><?= $siap['nama'] ?></h4>
                 <div class="allpost-text2"><?=$siap['judul']?><br></div>
+            </a>
             </div>
         <?php endwhile;?>
     </div>
@@ -139,16 +144,13 @@ if(isset($_GET['delpost'])){
         while($siap = $stmt->fetch()): 
         ?>
             <div class="random1">
+            <a href="./tampil/template.php?idpost=<?= $siap['idpost'] ?>" class="link">
                 <img src='uploads/<?="$siap[nama_gambar].$siap[format_gambar]"?>' class="random-pict1">
                 <h3><?= $siap['nama'] ?></h3>
                 <div class="random-text1"><br><br><?=$siap['judul']?><br></div>
+            </a>
             </div>
         <?php endwhile;?>
-    </div>
-    <div class="pelengkap1">
-        <h1>Belajar.<br>
-        Faster.<br>
-        Together. :v</h1>
     </div>
     <script language="JavaScript" type="text/javascript">
 function delpost(id, title, gambar)

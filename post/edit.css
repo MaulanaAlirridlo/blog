@@ -1,3 +1,27 @@
+.edit{
+    margin: auto;
+    background-color: rgb(247, 247, 247);
+    width: 40%;
+    height: auto;
+    margin-top: 120px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
 input[type="text"]{
-    width: 33%;
+    width: 100%;
+    border: none;
+}
+/* input[type="textarea"]{
+    width: 110%;
+    height: auto;
+    border: none;
+} */
+input[type="submit"]{
+    float: right;
+    border-color: black;
+    background-color: rgb(247, 247, 247);
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 3px;
 }

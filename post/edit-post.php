@@ -47,20 +47,22 @@ if(isset($_POST['submit'])){
     <script src="../style/sweetalert2.all.min.js"></script>
 </head>
 <body>
-<form method='post'>
-    <input type='hidden' name='idpost' value='<?php echo $row['idpost'];?>'>
+    <?php include('../head/header1.php'); ?>
+    <div class="edit">
+        <form method='post'>
+            <input type='hidden' name='idpost' value='<?php echo $row['idpost'];?>'>
 
-    <p><label>Title</label><br />
-    <input type='text' name='nama' value='<?php echo $row['nama'];?>'></p>
+            <p><label>Nama</label><br />
+                <input type='text' name='nama' value='<?php echo $row['nama'];?>'></p>
 
-    <p><label>Description</label><br />
-    <input type="text" name='judul' value="<?php echo $row['judul'];?>"></p>
+            <p><label>Judul</label><br />
+                <input type="text" name='judul' value="<?php echo $row['judul'];?>"></p>
 
-    <p><label>Content</label><br />
-    <textarea name='isi' cols='60' rows='10'><?php echo $row['isi'];?></textarea></p>
+            <p><label>Isi</label><br />
+                <textarea name='isi' cols='60' rows='10'><?php echo $row['isi'];?></textarea></p>
 
-    <p><input type='submit' name='submit' value='Update'></p>
-
+            <p><input type='submit' name='submit' value='Update'></p>
+    </div>
 </form>
 </body>
 </html>

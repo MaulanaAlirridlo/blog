@@ -83,14 +83,23 @@
             echo '<h3>Post '.$_GET['status'].'.</h3>'; 
         }
     ?>
-    <div class="conten">
-        <?php	
-		echo '<div>';
-        echo '<h1>'.$row['judul'].'</h1>';
-        echo "<div class='gambarcontencss'><img src='../uploads/$row[nama_gambar].$row[format_gambar]' class='gambarconten'></div><br>";
-		echo '<p>'.$row['isi'].'</p>';				
-		echo '</div>';
-	?>
+    <div class="isiconten">
+        <?php
+            echo "<div class='conten-header'><img src='../uploads/$row[nama_gambar].$row[format_gambar]' class='gambarconten'><br>";
+            echo '<h1>'.$row['judul'].'</h1>';
+            echo '<h4>'.$row['nama'].'</h4>';
+        ?>
+        <div class="edit-delete">
+            <a href="../post/edit-post.php?id=<?php echo $row['idpost'];?>">Edit</a> |
+            <a href="javascript:delpost('<?php echo $row['idpost'];?>','<?php echo $row['judul'];?>','<?= "$row[nama_gambar].$row[format_gambar]"?>')">Delete</a>
+        </div>
+        </div>
+    
+        <div class="conten">
+            <?php	
+		        echo '<p>'.$row['isi'].'</p>';
+	        ?>
+        </div>
     </div>
     <br>
     <div class="komen">
@@ -104,7 +113,7 @@
                     <label class="pointer" for="komen-<?= $item->idkomen ?>"">Edit</label> |
                     <a href="javascript:delkomen('<?php echo $item->idkomen;?>','<?php echo $idpost;?>')">Delete</a>
                 </div>
-                <input class="check none" type="checkbox" id="komen-<?= $item->idkomen ?>" name="komen<?= $item->idkomen ?>">
+                <input class="check" type="checkbox" id="komen-<?= $item->idkomen ?>" name="komen<?= $item->idkomen ?>">
                 <br>
                 <div class="edit none">
                     <form method="post">
@@ -137,6 +146,13 @@ function delkomen(id,idpost){
     if (confirm("Are you sure you want to delete it?")) {
         window.location.href = 'template.php?idpost='+idpost+'&delkomen=' + id;
     }
+};
+function delpost(id, title, gambar)
+{
+  if (confirm("Are you sure you want to delete '" + title + "'"))
+  {
+      window.location.href = 'index.php?delpost=' + id + '&gambar=' + gambar;
+  }
 }
 </script>
     <?php include('../foot/footer1.html') ?>

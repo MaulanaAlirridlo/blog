@@ -1,10 +1,7 @@
-html,body{
-  margin: 0;
-  padding:0;
-  height: 100%;
-}
 body{
-    background-image: url('wp.jpg');
+    margin: 0;
+    padding:0;
+    height: 100%;
     background-color: white;
     background-size: cover;
     background-attachment: fixed;
@@ -12,8 +9,8 @@ body{
 }
 .conten{
     position: relative;
-    top: 40px;
-    background-color: rgba(0, 0, 0, 0.7);
+    top: -5px;
+    /* background-color: rgba(0, 0, 0, 0.7); */
     width: 50%;
     height: auto;
     padding: 10px;
@@ -21,6 +18,13 @@ body{
     margin: 18px;
     overflow: hidden;
     margin-bottom: 50px;
+}
+.conten a{
+  text-decoration: none;
+  color: black;
+}
+.conten a:hover{
+  text-decoration: underline;
 }
 .conten div{
     background-color: white;
@@ -35,6 +39,10 @@ body{
   float: left;
   display: block;
   margin: 10px;
+  transition: transform .5s ease;
+}
+.conten-pict:hover{
+  transform: scale(1.05);
 }
 
   .dropdown1 {
@@ -43,6 +51,7 @@ body{
     bottom: 47px;
     border: none;
     height:40px;
+    right: 30px;
 }
  
 .dropdown1 .dropbtn1 {
@@ -99,7 +108,7 @@ body{
 
 
 
-  .mySlides {display: none}
+  .mySlides {display: none;}
  
   /* Slideshow container */
   .slideshow-container {
@@ -137,17 +146,25 @@ body{
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
   }
-  
   /* Caption text */
+  .mySlides a{
+    text-decoration: none;
+  }
   .text {
     color: black;
     font-size: 25px;
     padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
     width: 100%;
     text-align: center;
     -webkit-text-stroke: 1px white;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    bottom: 20px;
+    vertical-align: bottom;
+  }
+  .text h1{
+    font-size: 48px;
   }
   
   /* Number text (1/3 etc) */
@@ -197,36 +214,18 @@ body{
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
   }
-
-  .iklan{
-    background-color: rgba(37, 37, 37, 0.541);
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    margin:18px;
-    text-align: center;
-    color: white;
-  }
-  .iklan1{
-    background-color: rgba(37, 37, 37, 0.541);
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    margin:18px;
-    text-align: center;
-    color: white;
-    float: right;
-  }
-  .iklangangguk{
-    width: 850px;
-    height: auto;
-  }
   .video{
     width: 90%;
     height: 400px;
     background-color: rgb(24, 24, 24);
     color: white;
     overflow: hidden;
+    padding: 10px;
+  }
+  .videoyt{
+    float:right;
+    position: relative;
+    bottom: 60px;
   }
   .random{
     width: 90%;
@@ -236,13 +235,25 @@ body{
     background-color: white;
     margin-bottom: 20px;
   }
+  .random a{
+    text-decoration: none;
+    color: black;
+  }
+  .random a:hover{
+    text-decoration: underline;
+  }
   .random-pict{
     height: 100%;
     width: auto;
     float: left;
     margin-right: 20px;
+    transition: transform .5s ease;
+  }
+  .random-pict:hover{
+    transform: scale(1.05)
   }
   .random-text{
+    background-color: rgba(0,0,0,0.04);
     font-size: 40px;
   }
   .allpost{
@@ -253,6 +264,13 @@ body{
     background-color: white;
     margin-bottom: 20px;
   }
+  .allpost a{
+    text-decoration: none;
+    color: black;
+  }
+  .allpost a:hover{
+    text-decoration: underline;
+  }
   .isiallpost{
     overflow: hidden;
     padding: 10px;
@@ -262,6 +280,10 @@ body{
     height: 100px;
     float: left;
     margin-right: 20px;
+    transition: transform .5s ease;
+  }
+  .allpost-pict:hover{
+    transform: scale(1.05) ;
   }
   .pelengkap{
     width: 90%;
@@ -272,8 +294,19 @@ body{
     padding: 20px;
     margin-bottom: 20px;
   }
+  .pelengkap a{
+    text-decoration: none;
+    color: black;
+  }
+  .pelengkap a:hover{
+    text-decoration: underline;
+  }
   .pelengkap img{
     float: right;
+    transition: transform .5s ease;
+  }
+  .pelengkap img:hover{
+    transform: scale(1.05);
   }
   .allpost2{
     width: 100%;
@@ -282,6 +315,13 @@ body{
     padding: 20px;
     margin-bottom: 20px;
     background-color: white;
+  }
+  .allpost2 a{
+    text-decoration: none;
+    color: black;
+  }
+  .allpost2 a:hover{
+    text-decoration: underline;
   }
   .isiallpost2{
     overflow: hidden;
@@ -296,6 +336,10 @@ body{
     height: 100px;
     float: left;
     margin-bottom: 20px;
+    transition: transform .5s ease;
+  }
+  .allpost-pict2:hover{
+    transform: scale(1.05);
   }
   .rekomendasi{
     background-color: white;
@@ -305,6 +349,13 @@ body{
     padding: 20px;
     margin-bottom: 20px;
   }
+  .rekomendasi a{
+    text-decoration: none;
+    color: black;
+  }
+  .rekomendasi a:hover{
+    text-decoration: underline;
+  }
   .random-pict1{
     float: right;
     width: 600px;
@@ -312,19 +363,14 @@ body{
     position: relative;
     right: 70px;
     bottom: 210px;
+    transition: transform .5s ease;
+  }
+  .random-pict1:hover{
+    transform: scale(1.05);
   }
   .rekomendasi h1{
-    z-index: 1000;
+    z-index: 1;
     font-size: 100px;
     position: relative;
     bottom: 70px;
-  }
-  .pelengkap1{
-    width: 100%;
-    background-color: black;
-    height: 800px;
-    color: white;
-  }
-  .pelengkap1 h1{
-    font-size: 100px;
   }

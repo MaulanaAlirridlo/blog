@@ -1,13 +1,14 @@
-html,body{
+body{
     margin: 0;
     padding:0;
     height: 100%;
-}
-body{
-    background-image: url('../wp1.jpg');
+    background-color: white;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.edit-delete{
+    float: right;
 }
 .check:checked ~ .edit  {
     display: block!important;
@@ -19,25 +20,38 @@ body{
     display: block;
 }
 .pointer{
-    cursor:pointer
+    cursor:pointer;
+}
+.isiconten{
+    margin-top: 60px;
+}
+.conten-header{
+    overflow: hidden;
+    width: 90%;
+    height: 400px;
+    float: right;
+    padding: 10px;
+}
+.conten-header h1{
+    background-color: rgb(247, 247, 247);
+    height: 50%;
 }
 .conten{
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 60%;
+    background-color: white;
+    width: 40%;
     height: auto;
     margin: auto;
     margin-top: 70px;
     padding: 10px;
-    color: white;
+    color: black;
 }
 .gambarcontencss{
     text-align: center;
 }
 .gambarconten{
-    width: 50%;
+    width: 30%;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    float: left;
 }
 .komen{
     background-color: rgba(0, 0, 0, 0.7);

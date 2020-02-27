@@ -20,7 +20,7 @@
                 echo '<div class="dropdown">';
                 echo '<button class="dropbtn1"><img src="../panah.png"></button>';
                 echo '<div class="dropdown-content">';
-                echo '<a href="../home/home.php">home</a>';
+                echo '<a href="../home/home.php">Menu</a>';
                 echo '<a href="../logout.php">log out</a>';
                 echo '</div>';
                 echo '</div></div></div>';

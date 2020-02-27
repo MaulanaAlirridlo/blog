@@ -2,11 +2,24 @@ body {
   font-family: Verdana, sans-serif; 
   margin:0;
   margin-bottom: -300px;
-  overflow-x: hidden;
+}
+.pelengkap1{
+  width: 100%;
+  background-color: black;
+  height: 600px;
+  color: white;
+  position: relative;
+  bottom: -50px;
+  padding: 20px;
+  z-index: -1;
+}
+.pelengkap1 h1{
+  font-size: 100px;
 }
 .footer{
   height: 300px;
   width: 100%;
+  z-index: 1000;
   background-color: rgb(24, 24, 24);
   clear: both;
 }

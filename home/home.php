@@ -5,7 +5,6 @@ session_start();
     }
     else {
         $user =  $_SESSION['user'];
-        echo "<h1>welcome $user[username]</h1>";
     }
 ?>
 
@@ -13,11 +12,17 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pesbuk Timeline</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
+    <div class="gambar11">
+        <img src="../head/logo.png" class="img">
+    </div>
     <div id="background">
+        <?php if($user){
+            echo "<h1>welcome $user[username]</h1>";
+        } ?>
         <div id="post">
             <a href="../post/post.php"><button>post</button></a>
         </div>

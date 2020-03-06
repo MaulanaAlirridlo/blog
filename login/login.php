@@ -24,7 +24,6 @@ if(isset($_POST['login'])){
         
         //Compare the passwords.
         $validPassword = password_verify($password, $user['password']);
-        var_dump ($validPassword);
         
         //If $validPassword is TRUE, the login has been successful.
         if($validPassword){

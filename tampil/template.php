@@ -1,6 +1,5 @@
 <?php
     include('../connection.php');
-    session_start();
     if(isset($_SESSION['user'])) {
         $user = $_SESSION['user'];
      } else {
@@ -88,11 +87,13 @@
             echo "<div class='conten-header'><img src='../uploads/$row[nama_gambar].$row[format_gambar]' class='gambarconten'><br>";
             echo '<h1>'.$row['judul'].'</h1>';
             echo '<h4>'.$row['nama'].'</h4>';
+            if($user):
         ?>
         <div class="edit-delete">
             <a href="../post/edit-post.php?id=<?php echo $row['idpost'];?>">Edit</a> |
             <a href="javascript:delpost('<?php echo $row['idpost'];?>','<?php echo $row['judul'];?>','<?= "$row[nama_gambar].$row[format_gambar]"?>')">Delete</a>
         </div>
+            <?php endif; ?>
         </div>
     
         <div class="conten">

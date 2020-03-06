@@ -7,25 +7,40 @@
             $username = $_POST['username'];
             $password =  $_POST['password'];
             $confirm = $_POST['confirm'];
+            $email = $_POST['email'];
             $status = 'user';
 
-            if(!empty($username) && !empty($confirm) && !empty($password)) {
+            if(!empty($username) && !empty($confirm) && !empty($password) && !empty($email)) {
                     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+                    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
                     $cekuser = $db->prepare("SELECT username FROM user WHERE username = :username");
                     $cekuser->bindParam(':username', $username);
                     $cekuser->execute();
+                if(!$username){
+                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "format username salah!")}, 100);</script>';
+                }
                 if($cekuser->rowCount() > 0){
                     echo '<script>setTimeout(function () { swal.fire("ERROR!", "username sudah ada!")}, 100);</script>';
                 }
-                elseif($password != $confirm){
+                if(!$email){
+                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "format email salah!")}, 100);</script>';
+                }
+                $cekemail = $db->prepare("SELECT email FROM user WHERE email = :email");
+                $cekemail->bindParam(':email', $email);
+                $cekemail->execute();
+                if($cekemail->rowCount()>0){
+                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "email sudah ada!")}, 100);</script>';
+                }
+                if($password != $confirm){
                     echo '<script>setTimeout(function () { swal.fire("ERROR!", "confirm password dan password harus sama!")}, 100);</script>';
                 }
                 else{
                     $password = password_hash($password, PASSWORD_BCRYPT);
-                    $sql = "INSERT INTO user (username, password, status) VALUES (:username, :password, :status)";
+                    $sql = "INSERT INTO user (username, email, password, status) VALUES (:username, :email, :password, :status)";
                     $stmt = $db->prepare($sql);
 
                     $stmt->bindValue(':username', $username);
+                    $stmt->bindValue(':email', $email);
                     $stmt->bindValue(':password', $password);
                     $stmt->bindValue(':status', $status);
 
@@ -55,7 +70,8 @@
         <form method="post">
             <div id="subdaftar">
                 <div id="subdaftaratas">
-                    <label>Username</label><br><input type="text" name="username"><br>
+                    <label>Username</label><br><input type="text" name="username"><br><br>
+                    <label>Email</label><br><input type="text" name="email"><br>
                 </div>
                 <div id="subdaftarbawah">
                     <label>Password</label><br><input type="password" name="password"><br><br>

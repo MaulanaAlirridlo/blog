@@ -1,0 +1,20 @@
+.parent{
+    margin-top: 120px;
+    text-align: center;
+}
+.child1{
+    background-color: rgb(247, 247, 247);
+    width: 40%;
+    padding: 20px;
+    margin: auto;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.child1 input[type=password]{
+    width: 100%;
+}
+.child1 input[type=submit]{
+    float: right;
+    margin-top: 10px;
+}

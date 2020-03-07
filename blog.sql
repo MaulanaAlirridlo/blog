@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Feb 2020 pada 10.38
+-- Generation Time: 06 Mar 2020 pada 12.55
 -- Versi Server: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -75,13 +75,34 @@ INSERT INTO `post` (`idpost`, `iduser`, `nama`, `judul`, `isi`, `nama_gambar`, `
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `token`
+--
+
+CREATE TABLE `token` (
+  `idtoken` int(11) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `iduser` int(11) NOT NULL,
+  `dibuat` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `token`
+--
+
+INSERT INTO `token` (`idtoken`, `token`, `iduser`, `dibuat`) VALUES
+(1, 'XW7EHZlrPIBNBnNprsxCrSuYIyQtRQUDBMBBGRIPHSSYRQUSZWXVYVXVYZZZ', 1, '2020-03-06');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
   `iduser` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(1000) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -89,9 +110,9 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`iduser`, `username`, `password`, `status`) VALUES
-(1, 'maulana', '$2y$10$junRNA/IJWxYkM0lZNxmdOt4GeQNGDv84mN4/BsRjudzyynreSOK.', 'user'),
-(2, 'tes', '$2y$10$rx5szPzfIGOtG7t4cI8Q0.TJBUQFcUmX4iA6yAdY5675fsZBXZzAq', 'user');
+INSERT INTO `user` (`iduser`, `username`, `email`, `password`, `status`) VALUES
+(1, 'maulana', 'maulana.alirridlo@gmail.com', '$2y$10$yefMxAImfPWpkkf0oJXn1u5z8hsKPGK5bEegt8eNOjY1hvAw7ymRu', 'admin'),
+(2, 'tes', 'newbie.0123456789101112@gmail.com', '$2y$10$nJCGHo6DOx/Di2stIQ3xy.Qy2zFddy872uyj25VKlXkHQLDARtrla', 'user');
 
 --
 -- Indexes for dumped tables
@@ -108,6 +129,12 @@ ALTER TABLE `komen`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`idpost`);
+
+--
+-- Indexes for table `token`
+--
+ALTER TABLE `token`
+  ADD PRIMARY KEY (`idtoken`);
 
 --
 -- Indexes for table `user`
@@ -130,6 +157,12 @@ ALTER TABLE `komen`
 --
 ALTER TABLE `post`
   MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `token`
+--
+ALTER TABLE `token`
+  MODIFY `idtoken` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`

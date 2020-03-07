@@ -1,18 +1,34 @@
 <?php
     include('../head/header1.php');
-    if(isset($_POST['simpan'])){
-        $lupa=$_SESSION['lupa'];
-        //tambahi cek password sama atau tidak
-        $password = $_POST['password'];
-        $password = password_hash($password, PASSWORD_BCRYPT);
-        $stmt = $db->prepare('UPDATE user SET password = :password WHERE iduser = :iduser') ;
-        $kirim=$stmt->execute(array(
-            ':password' => $password,
-            ':iduser' => $lupa['iduser']
-        ));
-        if($kirim){
-            header('location: ../login/login.html');
+    $today = date('Y-m-d');
+    $stmt = $db->prepare("SELECT * FROM token WHERE token=:token");
+    $stmt->bindValue(':token', $_GET['t']);
+    $stmt->execute();
+    $token = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($token['dibuat']==$today){
+        if(isset($_POST['simpan'])){
+            $stmt = $db->prepare("SELECT * FROM token WHERE token=:token");
+            $stmt->bindValue(':token', $token['token']);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $password = $_POST['password'];
+            $confirm = $_POST['confirm'];
+            if($password==$confirm){
+                $password = password_hash($password, PASSWORD_BCRYPT);
+                $stmt = $db->prepare('UPDATE user SET password = :password WHERE iduser = :iduser') ;
+                $kirim=$stmt->execute(array(
+                ':password' => $password,
+                ':iduser' => $token['iduser']
+                ));
+                if($kirim){
+                    header('location: ../login/login.html');
+                }
+            } else {
+                echo 'password dan confirm password tidak sama';
+            }
         }
+    } else{
+        header('Location: tokeninvalid.php');
     }
 ?>
 <html>

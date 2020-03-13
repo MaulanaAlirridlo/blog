@@ -13,7 +13,7 @@
         $pass = '054ca5b6';
         $db = 'heroku_2faaa787ccf495e';
         $port=3306;
-        $db = new PDO("mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_2faaa787ccf495e;port=3306", $user, $pass);
+        $db = new PDO("mysql:host=$host;dbname=$db;port=$port", $user, $pass);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //     echo "Connected !";
     // } catch (PDOException $e) {

@@ -9,8 +9,8 @@
     //pdo
     // try {
         $host= 'us-cdbr-iron-east-04.cleardb.net'; 
-        $user = '054ca5b6';
-        $pass = 'bce978a18a751f';
+        $user = 'bce978a18a751f';
+        $pass = '054ca5b6';
         $db = 'heroku_2faaa787ccf495e';
         $db = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

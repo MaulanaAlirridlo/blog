@@ -11,27 +11,31 @@
             $status = 'user';
 
             if(!empty($username) && !empty($confirm) && !empty($password) && !empty($email)) {
-                    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-                    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-                    $cekuser = $db->prepare("SELECT username FROM user WHERE username = :username");
-                    $cekuser->bindParam(':username', $username);
-                    $cekuser->execute();
-                if(!$username){
-                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "format username salah!")}, 100);</script>';
-                }
-                if($cekuser->rowCount() > 0){
-                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "username sudah ada!")}, 100);</script>';
-                }
-                if(!$email){
-                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "format email salah!")}, 100);</script>';
-                }
+                $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+                $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+                $cekusername = $db->prepare("SELECT username FROM user WHERE username = :username");
+                $cekusername->bindParam(':username', $username);
+                $cekusername->execute();
                 $cekemail = $db->prepare("SELECT email FROM user WHERE email = :email");
                 $cekemail->bindParam(':email', $email);
                 $cekemail->execute();
-                if($cekemail->rowCount()>0){
+                if(!$username){
+                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "format username salah!")}, 100);</script>';
+                }
+                elseif(strlen($username)>8){
+                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "username melebihi 8 karakter!")}, 100);</script>';
+                }
+                elseif($cekusername->rowCount() > 0){
+                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "username sudah ada!")}, 100);</script>';
+                }
+                elseif(!$email){
+                    echo '<script>setTimeout(function () { swal.fire("ERROR!", "format email salah!")}, 100);</script>';
+                }
+                
+                elseif($cekuemail->rowCount() > 0){
                     echo '<script>setTimeout(function () { swal.fire("ERROR!", "email sudah ada!")}, 100);</script>';
                 }
-                if($password != $confirm){
+                elseif($password != $confirm){
                     echo '<script>setTimeout(function () { swal.fire("ERROR!", "confirm password dan password harus sama!")}, 100);</script>';
                 }
                 else{

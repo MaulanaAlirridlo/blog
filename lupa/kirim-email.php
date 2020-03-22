@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('../connection.php');
     use PHPMailer\ PHPMailer\ PHPMailer;
     use PHPMailer\ PHPMailer\ SMTP;
@@ -83,6 +84,7 @@
                         $mail->Password   = 'asd081357';                               // SMTP password
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                         $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                        $mail->CharSet = 'UTF-8';
 
                         // //Recipients
                         $mail->setFrom('maulana.alirridlo0@gmail.com', 'admin');
@@ -103,16 +105,20 @@
                         $mail->AltBody = "$link";
 
                         $mail->send();
-                        echo 'Message has been sent';
+                        // echo 'Message has been sent';
+                        $_SESSION['terkirim']= 'email verifikasi terkirim silahkan check email anda';
+                        return header('location: lupa.php');
                     } catch (Exception $e) {
-                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                        $_SESSION['error']= "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";;
+                        return header('location: lupa.php');
                     }
-                    header('location:terkirim.php');
                 } else {
-                    echo('error');
+                    $_SESSION['error']= "error";;
+                    return header('location: lupa.php');
                 };
             }else{
-                echo('email tidak terdaftar');
+                $_SESSION['error']= "email tidak terdaftar";;
+                return header('location: lupa.php');
             }
         }
     }

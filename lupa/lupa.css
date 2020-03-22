@@ -18,3 +18,17 @@
     float: right;
     margin-top: 10px;
 }
+.ok{
+    background-color: rgba(0, 255, 255, 0.692);
+    width: 40%;
+    height: auto;
+    padding: 5px;
+    margin: auto;
+}
+.error{
+    background-color: rgba(255, 42, 42, 0.692);
+    width: 40%;
+    height: auto;
+    padding: 5px;
+    margin: auto;
+}

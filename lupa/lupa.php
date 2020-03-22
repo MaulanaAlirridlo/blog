@@ -5,6 +5,7 @@
 <head>
     <title>Lupa Password</title>
     <link rel="stylesheet" href="lupa.css">
+    <link rel="icon" href="../logo.png">
 </head>
 <body>
     <div class="parent">
@@ -19,6 +20,23 @@
                 </div>
             </form>
         </div>
+        <br>
+        <?php if(isset($_SESSION['terkirim'])):?>
+            <div class="ok">
+                <?php
+                    echo $_SESSION['terkirim'];
+                    unset($_SESSION['terkirim']);
+                ?>
+            </div>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['error'])):?>
+            <div class="error">
+                <?php
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']);
+                ?>
+            </div>
+        <?php endif; ?>
     </div>
 </body>
 </html>

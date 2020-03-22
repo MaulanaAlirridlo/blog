@@ -29,6 +29,7 @@ if(isset($_GET['delpost'])){
 <head>
     <title>My Blog</title>
     <link rel="stylesheet" href="css.css">
+    <link rel="icon" href="logo.png">
 </head>
 
 <body>

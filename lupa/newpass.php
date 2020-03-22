@@ -35,6 +35,7 @@
 <head>
     <title>Document</title>
     <link rel="stylesheet" href="newpass.css">
+    <link rel="icon" href="../logo.png">
 </head>
 <body>
     <div class=parent>

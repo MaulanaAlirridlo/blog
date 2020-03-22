@@ -72,6 +72,7 @@
 <head>
     <title>Blog - <?php echo $row['judul'];?></title>
     <link rel="stylesheet" href="template.css">
+    <link rel="icon" href="../logo.png">
 </head>
 
 <body>

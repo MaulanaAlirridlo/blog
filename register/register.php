@@ -60,6 +60,7 @@
 <head>
     <title>register</title>
     <link rel="stylesheet" href="./register.css">
+    <link rel="icon" href="../logo.png">
 </head>
 
 <body>

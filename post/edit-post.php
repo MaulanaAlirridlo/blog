@@ -45,6 +45,7 @@ if(isset($_POST['submit'])){
     <title>edit post</title>
     <link rel="stylesheet" href="edit.css">
     <script src="../style/sweetalert2.all.min.js"></script>
+    <link rel="icon" href="../logo.png">
 </head>
 <body>
     <?php include('../head/header1.php'); ?>

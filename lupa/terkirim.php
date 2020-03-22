@@ -1,1 +1,0 @@
-<?= 'email verifikasi terkirim silahkan check email anda'?>

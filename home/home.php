@@ -14,6 +14,7 @@ session_start();
 <head>
     <title>Menu</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="icon" href="../logo.png">
 </head>
 <body>
     <div class="gambar11">

@@ -73,7 +73,7 @@ if(isset($_GET['delpost'])){
                 <img src='uploads/<?="$item->nama_gambar.$item->format_gambar"?>' class="conten-pict">
                 <h2 class="title"><?= substr($item->judul, 0, 30)?><?='...'?></h2>
                 </a>
-                <?php if($user['iduser']==$item->iduser):?>
+                <?php if(($user ? $user['iduser'] : null ) == $item->iduser):?>
                 <div class="dropdown1">
                     <button class="dropbtn1"><img src="panah.png"></button>
                     <div class="dropdown-content1">

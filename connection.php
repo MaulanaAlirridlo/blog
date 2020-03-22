@@ -7,6 +7,7 @@
     // $connect = mysqli_connect($host,$user,$pass,$db)
 
     //pdo
+	// $db = new PDO('mysql:host=localhost;dbname=blog', "root", "");
     // try {
         $host= 'us-cdbr-iron-east-04.cleardb.net'; 
         $user = 'bce978a18a751f';
